@@ -1,8 +1,8 @@
 <template lang="html">
   <div>
-    <h1>Hello Films</h1>
+    <h1>Studio Ghibli Films App</h1>
     <film-filter-form :films="films" />
-    <film-detail></film-detail>
+    <film-detail />
   </div>
 </template>
 

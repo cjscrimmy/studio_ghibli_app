@@ -1,6 +1,5 @@
 <template lang="html">
     <div>
-        <h2>Hi! I'm Film Filter Form</h2>
         <form v-on:submit.prevent>
             <select v-on:change="handleSelect" v-model="selectedFilm">
                 <option disabled value="">Select a Film</option>
