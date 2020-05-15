@@ -1,10 +1,11 @@
 <template lang="html">
     <div>
         <form v-on:submit.prevent>
-            <select v-on:change="handleSelect" v-model="selectedFilm">
+            <span><input type="text" v-model="search" placeholder="Search for a film" v-on:keyup="searchForFilm"/></span>
+            <span><select v-on:change="handleSelect" v-model="selectedFilm">
                 <option disabled value="">Select a Film</option>
                 <option v-for="film in films" :value="film">{{film.title}}</option>
-            </select>
+            </select></span>
 
         </form>
     </div>
@@ -23,8 +24,17 @@ export default {
     },
     props: ["films"],
     methods: {
-        handleSelect(){
+        searchForFilm(){
+            let foundFilm = this.films.find((film) => {
+                return film.title.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
+            })
+            this.selectedFilm = foundFilm;
+
             eventBus.$emit('film-selected', this.selectedFilm)
+        },
+        handleSelect(){
+            this.search ="";
+            eventBus.$emit('film-selected', this.selectedFilm);
         }
     }
 }
