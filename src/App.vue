@@ -1,14 +1,15 @@
-<template>
+<template lang="html">
   <div>
     <h1>Hello Films</h1>
-    <film-filter-form></film-filter-form>
+    <film-filter-form :films="films" />
     <film-detail></film-detail>
   </div>
 </template>
 
 <script>
 import FilmFilterForm from './components/FilmFilterForm.vue';
-import FilmDetail from './components/FilmDetail.vue'
+import FilmDetail from './components/FilmDetail.vue';
+
 export default {
   name: 'app',
   data(){
