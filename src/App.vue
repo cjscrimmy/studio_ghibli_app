@@ -1,8 +1,9 @@
 <template lang="html">
-  <div>
-    <h1>Studio Ghibli Films App</h1>
-    <film-filter-form :films="films" />
-    <film-detail />
+  <div id="app">
+      <div id="banner">
+      </div>
+      <film-filter-form :films="films" />
+      <film-detail />
   </div>
 </template>
 
@@ -31,5 +32,11 @@ export default {
 </script>
 
 <style>
-
+  #banner{
+    background-image: url("assets/studio_ghibli_logo.png");
+    background-repeat: no-repeat;
+    height: 300px;
+    
+    color: white;
+  }
 </style>

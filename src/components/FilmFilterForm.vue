@@ -1,8 +1,8 @@
 <template lang="html">
     <div>
         <form v-on:submit.prevent>
-            <span><input type="text" v-model="search" placeholder="Search for a film" v-on:keyup="searchForFilm"/></span>
-            <span><select v-on:change="handleSelect" v-model="selectedFilm">
+            <span id="searchBox"><input type="text" v-model="search" placeholder="Search for a film" v-on:keyup="searchForFilm"/></span>
+            <span id="dropdown"><select v-on:change="handleSelect" v-model="selectedFilm">
                 <option disabled value="">Select a Film</option>
                 <option v-for="film in films" :value="film">{{film.title}}</option>
             </select></span>
@@ -41,5 +41,8 @@ export default {
 </script>
 
 <style>
-
+    #searchBox {
+        padding: 0px;
+        margin: 20px 20px 0px 0px;
+    }
 </style>
