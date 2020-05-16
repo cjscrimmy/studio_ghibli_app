@@ -1,12 +1,19 @@
 <template lang="html">
     <div v-if="film" id="filmDetail">
-        <div id="wrapper">
-            <h2>{{film.title}}</h2>
-            <p><strong>Description:</strong> {{film.description}}</p>
-            <p><strong>Director:</strong> {{film.director}}</p>
-            <p><strong>Producer:</strong> {{film.producer}}</p>
-            <p><strong>Release Date:</strong> {{film.release_date}}</p>
-        </div>
+            <div id="wrapper">
+                <div id="text-adjust">
+                    <h1>{{film.title}}</h1>
+
+                    <p><u><strong>Description</strong></u> </p>
+                    <p>{{film.description}}</p>
+
+                    <p><u><strong>Director</strong></u> {{film.director}}</p>
+
+                    <p><u><strong>Producer</strong></u> {{film.producer}}</p>
+
+                    <p><u><strong>Released</strong></u> {{film.release_date}}</p>
+                </div>
+            </div>
     </div>
 </template>
 
@@ -46,11 +53,20 @@ export default {
     #wrapper p{
         color: white;
     }
-    #wrapper p strong{
+    #wrapper p u{
         color: rgb(48, 47, 47);
+        margin-right: 24px;
     }
-    #wrapper h2{
+    #wrapper h1{
         text-align: center;
         color: rgb(9, 46, 114);
+        text-transform: uppercase;
+    }
+    #wrapper p{
+        font-size: 16pt;
+    }
+    #text-adjust{
+        margin: 24px;
+        padding: 5px;
     }
 </style>

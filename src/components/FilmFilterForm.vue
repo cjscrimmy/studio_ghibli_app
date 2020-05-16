@@ -1,6 +1,6 @@
 <template lang="html">
-    <div>
-        <form v-on:submit.prevent>
+    <div id="formDiv">
+        <form v-on:submit.prevent id="form">
             <span id="searchBox"><input type="text" v-model="search" placeholder="Search for a film" v-on:keyup="searchForFilm"/></span>
             <span id="dropdown"><select v-on:change="handleSelect" v-model="selectedFilm">
                 <option disabled value="">Select a Film</option>
@@ -44,5 +44,16 @@ export default {
     #searchBox {
         padding: 0px;
         margin: 20px 20px 0px 0px;
+    }
+    #formDiv{
+        display: block;
+        text-align: center;
+    }
+
+    #form{
+        display: inline-block;
+        margin-right: auto;
+        margin-left: auto; 
+        text-align: left;
     }
 </style>
